@@ -1,0 +1,589 @@
+mondial2=# SELECT country.name, economy.gdp FROM country JOIN economy ON country.code = economy.country WHERE economy.gdp > 0 ORDER BY economy.gdp DESC LIMIT 10;
+name      |   gdp
+----------------+----------
+United States  | 16720000
+China          |  9330000
+Japan          |  5007000
+Germany        |  3593000
+France         |  2739000
+United Kingdom |  2490000
+Brazil         |  2190000
+Russia         |  2113000
+Italy          |  2068000
+Canada         |  1825000
+(10 rows)
+mondial2=# SELECT country.name, economy.gdp FROM country JOIN economy ON country.code = economy.country WHERE economy.gdp <20000 ORDER BY economy.gdp DESC;
+               name               |  gdp
+----------------------------------+-------
+ Gabon                            | 19970
+ Nepal                            | 19340
+ Honduras                         | 18880
+ Bosnia and Herzegovina           | 18870
+ Zaire                            | 18560
+ Equatorial Guinea                | 17080
+ Brunei                           | 16560
+ Papua New Guinea                 | 16100
+ Georgia                          | 15950
+ Cambodia                         | 15640
+ Botswana                         | 15530
+ Senegal                          | 15360
+ Mozambique                       | 14670
+ Iceland                          | 14590
+ Jamaica                          | 14390
+ Congo                            | 14250
+ Chad                             | 13590
+ Albania                          | 12800
+ Namibia                          | 12300
+ Burkina Faso                     | 12130
+ Mauritius                        | 11900
+ South Sudan                      | 11770
+ Mali                             | 11370
+ Nicaragua                        | 11260
+ Mongolia                         | 11140
+ Macedonia                        | 10650
+ Madagascar                       | 10530
+ Zimbabwe                         | 10480
+ Armenia                          | 10440
+ Laos                             | 10100
+ Malta                            |  9541
+ New Caledonia                    |  9280
+ Tajikistan                       |  8513
+ Bahamas                          |  8373
+ Benin                            |  8359
+ Haiti                            |  8287
+ Moldova                          |  7932
+ Rwanda                           |  7700
+ Niger                            |  7304
+ Kyrgyzstan                       |  7234
+ Kosovo                           |  7150
+ Guinea                           |  6544
+ Timor-Leste                      |  6129
+ Monaco                           |  5748
+ French Polynesia                 |  5650
+ Bermuda                          |  5600
+ Curacao                          |  5600
+ Liechtenstein                    |  5113
+ Jersey                           |  5100
+ Suriname                         |  5009
+ Andorra                          |  4800
+ Sierra Leone                     |  4607
+ Guam                             |  4600
+ Montenegro                       |  4518
+ Togo                             |  4299
+ Barbados                         |  4262
+ Fiji                             |  4218
+ Mauritania                       |  4183
+ Isle of Man                      |  4076
+ Martinique                       |  3950
+ Swaziland                        |  3807
+ Guadeloupe                       |  3700
+ West Bank                        |  3700
+ Malawi                           |  3683
+ Eritrea                          |  3438
+ Guyana                           |  3020
+ Reunion                          |  2900
+ Guernsey                         |  2742
+ Burundi                          |  2676
+ Aruba                            |  2516
+ Lesotho                          |  2457
+ Somalia                          |  2372
+ Faroe Islands                    |  2320
+ Maldives                         |  2270
+ Cayman Islands                   |  2250
+ Greenland                        |  2160
+ Bhutan                           |  2133
+ Central African Republic         |  2050
+ Liberia                          |  1977
+ Cape Verde                       |  1955
+ San Marino                       |  1866
+ Gaza Strip                       |  1700
+ Belize                           |  1637
+ Djibouti                         |  1459
+ Saint Lucia                      |  1377
+ Seychelles                       |  1271
+ Antigua and Barbuda              |  1220
+ Virgin Islands                   |  1200
+ Gibraltar                        |  1106
+ Solomon Islands                  |  1099
+ British Virgin Islands           |  1095
+ Mayotte                          | 953.6
+ Gambia                           |   896
+ Guinea-Bissau                    |   880
+ Vanuatu                          |   828
+ Grenada                          |   811
+ French Guiana                    |   800
+ Sint Maarten                     | 794.7
+ Saint Kitts and Nevis            |   767
+ Saint Vincent and the Grenadines |   742
+ Northern Mariana Islands         |   733
+ Samoa                            |   705
+ Comoros                          |   658
+ Saint Martin                     | 561.5
+ Dominica                         |   495
+ Tonga                            |   477
+ American Samoa                   | 462.2
+ Micronesia                       |   339
+ Sao Tome and Principe            |   311
+ Palau                            |   221
+ Turks and Caicos Islands         |   216
+ Saint Pierre and Miquelon        | 215.3
+ Marshall Islands                 |   193
+ Cook Islands                     | 183.2
+ Anguilla                         | 175.4
+ Kiribati                         |   173
+ Falkland Islands                 | 164.5
+ Nauru                            |   100
+ Wallis and Futuna                |    60
+ Tuvalu                           |    38
+ Montserrat                       |    29
+ Saint Helena                     |    18
+ Niue                             |    10
+ Tokelau                          |   1.5
+(124 rows)
+mondial2=# SELECT country.name, economy.inflation FROM country JOIN economy ON country.code = economy.country WHERE economy.inflation is not null ORDER BY economy.inflation DESC;
+               name               | inflation
+----------------------------------+-----------
+ Syria                            |      59.1
+ Venezuela                        |      56.2
+ Iran                             |      42.3
+ Malawi                           |      26.9
+ Sudan                            |        25
+ Argentina                        |      20.8
+ Belarus                          |        19
+ West Bank                        |        14
+ Eritrea                          |        13
+ Marshall Islands                 |      12.9
+ Guinea                           |      11.9
+ Yemen                            |      11.8
+ Sierra Leone                     |      11.1
+ Bhutan                           |        11
+ Ghana                            |        11
+ Uzbekistan                       |      10.1
+ India                            |       9.6
+ Jamaica                          |       9.4
+ Burundi                          |       9.3
+ Turkmenistan                     |         9
+ Egypt                            |         9
+ Angola                           |       8.9
+ Madagascar                       |       8.8
+ Sao Tome and Principe            |       8.7
+ Nigeria                          |       8.7
+ Zimbabwe                         |       8.5
+ Ethiopia                         |       8.4
+ Uruguay                          |       8.3
+ Mongolia                         |       8.2
+ Tanzania                         |       7.8
+ Pakistan                         |       7.7
+ Indonesia                        |       7.7
+ Turkey                           |       7.6
+ Bangladesh                       |       7.6
+ Zambia                           |       7.1
+ Zaire                            |       7.1
+ Central African Republic         |         7
+ Kyrgyzstan                       |       6.8
+ Vietnam                          |       6.8
+ Russia                           |       6.8
+ Afghanistan                      |       6.8
+ Nepal                            |       6.7
+ Bolivia                          |       6.5
+ Laos                             |       6.5
+ Haiti                            |       6.3
+ Uganda                           |       6.2
+ Brazil                           |       6.2
+ Armenia                          |       6.2
+ Swaziland                        |       6.1
+ Botswana                         |       6.1
+ Tunisia                          |       6.1
+ Cuba                             |         6
+ Equatorial Guinea                |         6
+ Gambia                           |         6
+ Jordan                           |       5.9
+ Rwanda                           |       5.9
+ South Africa                     |       5.8
+ Kenya                            |       5.8
+ Kazakhstan                       |       5.8
+ Gaza Strip                       |       5.7
+ Nicaragua                        |       5.7
+ Myanmar                          |       5.7
+ Costa Rica                       |       5.6
+ Namibia                          |       5.5
+ Macao                            |       5.5
+ Trinidad and Tobago              |       5.4
+ Saint Lucia                      |       5.3
+ Liberia                          |       5.2
+ Honduras                         |       5.2
+ Maldives                         |       5.1
+ Lesotho                          |         5
+ Lebanon                          |         5
+ Isle of Man                      |         5
+ Dominican Republic               |         5
+ Sri Lanka                        |       4.7
+ Moldova                          |       4.6
+ Mauritania                       |       4.6
+ Saint Pierre and Miquelon        |       4.5
+ Montserrat                       |       4.5
+ Timor-Leste                      |       4.5
+ Chad                             |       4.5
+ Guatemala                        |       4.4
+ Mozambique                       |       4.4
+ Hong Kong                        |       4.4
+ Seychelles                       |       4.3
+ Suriname                         |       4.2
+ Panama                           |       4.1
+ Montenegro                       |         4
+ Sint Maarten                     |         4
+ Guam                             |         4
+ Mexico                           |         4
+ Niue                             |         4
+ Martinique                       |       3.9
+ Iceland                          |       3.9
+ Guyana                           |       3.9
+ Algeria                          |       3.9
+ Tuvalu                           |       3.8
+ Papua New Guinea                 |       3.8
+ Tajikistan                       |       3.7
+ Guadeloupe                       |       3.7
+ Saudi Arabia                     |       3.7
+ Jersey                           |       3.7
+ Mauritius                        |       3.5
+ Micronesia                       |       3.4
+ Guernsey                         |       3.4
+ Estonia                          |       3.4
+ Curacao                          |       3.2
+ Romania                          |       3.2
+ Cambodia                         |       3.2
+ Libya                            |       3.2
+ Anguilla                         |       3.1
+ Bahrain                          |       3.1
+ Qatar                            |       3.1
+ Fiji                             |         3
+ Antigua and Barbuda              |         3
+ Cote d'Ivoire                    |       2.9
+ Peru                             |       2.9
+ Saint Vincent and the Grenadines |       2.8
+ Gibraltar                        |       2.8
+ San Marino                       |       2.8
+ Kuwait                           |       2.8
+ Philippines                      |       2.8
+ Macedonia                        |       2.8
+ Wallis and Futuna                |       2.8
+ Greenland                        |       2.8
+ Palau                            |       2.7
+ Samoa                            |       2.7
+ Ecuador                          |       2.6
+ China                            |       2.6
+ Solomon Islands                  |       2.6
+ Cameroon                         |       2.6
+ French Guiana                    |       2.5
+ Turks and Caicos Islands         |       2.5
+ Netherlands                      |       2.5
+ Comoros                          |       2.5
+ Djibouti                         |       2.5
+ Morocco                          |       2.5
+ Australia                        |       2.4
+ Azerbaijan                       |       2.4
+ Singapore                        |       2.4
+ Grenada                          |       2.4
+ Benin                            |       2.4
+ Faroe Islands                    |       2.3
+ Paraguay                         |       2.3
+ Cook Islands                     |       2.2
+ Malaysia                         |       2.2
+ Colombia                         |       2.2
+ Serbia                           |       2.2
+ Croatia                          |       2.2
+ Virgin Islands                   |       2.2
+ Saint Kitts and Nevis            |       2.2
+ Togo                             |       2.2
+ Finland                          |       2.2
+ Thailand                         |       2.2
+ Burkina Faso                     |       2.1
+ Barbados                         |       2.1
+ Austria                          |       2.1
+ United Kingdom                   |         2
+ Iraq                             |         2
+ Tonga                            |         2
+ Niger                            |       1.9
+ Hungary                          |       1.9
+ Guinea-Bissau                    |       1.9
+ Vanuatu                          |       1.9
+ Cape Verde                       |       1.9
+ Norway                           |       1.9
+ Luxembourg                       |       1.8
+ Slovenia                         |       1.8
+ Kosovo                           |       1.8
+ Cayman Islands                   |       1.8
+ Dominica                         |       1.8
+ Spain                            |       1.8
+ Bermuda                          |       1.8
+ Albania                          |       1.7
+ New Caledonia                    |       1.7
+ Chile                            |       1.7
+ Israel                           |       1.7
+ Congo                            |       1.7
+ South Sudan                      |       1.7
+ Slovakia                         |       1.7
+ British Virgin Islands           |       1.6
+ Germany                          |       1.6
+ Oman                             |       1.6
+ United States                    |       1.5
+ Bulgaria                         |       1.5
+ Monaco                           |       1.5
+ Czech Republic                   |       1.4
+ United Arab Emirates             |       1.3
+ Belize                           |       1.3
+ Belgium                          |       1.3
+ New Zealand                      |       1.3
+ Lithuania                        |       1.2
+ Gabon                            |       1.2
+ Italy                            |       1.2
+ Falkland Islands                 |       1.2
+ French Polynesia                 |       1.1
+ South Korea                      |       1.1
+ Andorra                          |       1.1
+ Taiwan                           |       1.1
+ Poland                           |         1
+ Bahamas                          |         1
+ Brunei                           |         1
+ Malta                            |         1
+ Canada                           |         1
+ El Salvador                      |       0.9
+ France                           |       0.9
+ Puerto Rico                      |       0.9
+ Senegal                          |       0.8
+ Denmark                          |       0.8
+ Ukraine                          |       0.7
+ Ireland                          |       0.6
+ Portugal                         |       0.4
+ Japan                            |       0.2
+ Kiribati                         |       0.2
+ Bosnia and Herzegovina           |       0.2
+ Cyprus                           |       0.2
+ Latvia                           |       0.2
+ Mali                             |       0.1
+ Sweden                           |         0
+ Switzerland                      |      -0.4
+ Georgia                          |      -0.5
+ Liechtenstein                    |      -0.7
+ Greece                           |      -0.8
+ Aruba                            |        -2
+ Northern Mariana Islands         |      -2.7
+ Nauru                            |      -3.6
+(226 rows)
+mondial2=# SELECT country.name, economy.agriculture, economy.industry, economy.service FROM country JOIN economy ON country.code = economy.country WHERE economy.agriculture > economy.industry AND economy.agriculture > economy.service;
+           name           | agriculture | industry | service
+--------------------------+-------------+----------+---------
+ Solomon Islands          |          50 |     10.6 |    39.4
+ Mali                     |        38.5 |     24.4 |      37
+ Zaire                    |        44.3 |     21.7 |      34
+ Central African Republic |        56.6 |     14.5 |    28.9
+ Chad                     |        46.3 |      9.9 |    43.8
+ Comoros                  |          51 |       10 |      39
+ Liberia                  |        76.9 |      5.4 |    17.7
+ Ethiopia                 |          47 |     10.8 |    42.2
+ Somalia                  |        59.3 |      7.2 |    33.5
+ Guinea-Bissau            |          58 |     13.5 |    28.5
+ Sierra Leone             |        47.9 |     18.6 |    33.5
+(11 rows)
+mondial2=# SELECT country.name, economy.unemployment FROM country JOIN economy ON country.code = economy.country WHERE economy.unemployment is not null ORDER BY economy.unemployment DESC;
+               name               | unemployment
+----------------------------------+--------------
+ Zimbabwe                         |           95
+ Nauru                            |           90
+ Liberia                          |           85
+ Burkina Faso                     |           77
+ Turkmenistan                     |           60
+ Djibouti                         |           59
+ Congo                            |           53
+ Senegal                          |           48
+ Nepal                            |           46
+ Bosnia and Herzegovina           |         44.3
+ Haiti                            |         40.6
+ Swaziland                        |           40
+ Kenya                            |           40
+ Marshall Islands                 |           36
+ Afghanistan                      |           35
+ Yemen                            |           35
+ Grenada                          |         33.5
+ Kosovo                           |         30.9
+ Cameroon                         |           30
+ Mauritania                       |           30
+ Mali                             |           30
+ Libya                            |           30
+ American Samoa                   |         29.8
+ Macedonia                        |         28.6
+ Maldives                         |           28
+ Greece                           |         27.9
+ Namibia                          |         27.4
+ Spain                            |         26.3
+ Lesotho                          |           25
+ South Africa                     |         24.9
+ Nigeria                          |         23.9
+ Dominica                         |           23
+ Equatorial Guinea                |         22.3
+ Micronesia                       |           22
+ Croatia                          |         21.6
+ Gabon                            |           21
+ Cape Verde                       |           21
+ Serbia                           |         20.1
+ Saint Lucia                      |           20
+ Comoros                          |           20
+ Sudan                            |           20
+ Montenegro                       |         19.1
+ Saint Vincent and the Grenadines |         18.8
+ Timor-Leste                      |         18.4
+ Botswana                         |         17.8
+ Syria                            |         17.8
+ Ethiopia                         |         17.5
+ Cyprus                           |         17.4
+ Armenia                          |         17.3
+ Tunisia                          |         17.2
+ New Caledonia                    |         17.1
+ Mozambique                       |           17
+ Albania                          |         16.9
+ Portugal                         |         16.8
+ Jamaica                          |         16.3
+ Bahamas                          |         16.2
+ Puerto Rico                      |           16
+ Iran                             |           16
+ Iraq                             |           16
+ Belize                           |         15.5
+ Oman                             |           15
+ Georgia                          |           15
+ Bahrain                          |           15
+ Dominican Republic               |           15
+ Zambia                           |           15
+ Slovakia                         |         14.4
+ Jordan                           |           14
+ Ireland                          |         13.5
+ Egypt                            |         13.4
+ Slovenia                         |         13.1
+ Cook Islands                     |         13.1
+ Curacao                          |           13
+ Tonga                            |           13
+ Italy                            |         12.4
+ Lithuania                        |         12.4
+ Wallis and Futuna                |         12.2
+ Sint Maarten                     |           12
+ Niue                             |           12
+ French Polynesia                 |         11.7
+ Bulgaria                         |         11.6
+ Barbados                         |         11.4
+ Northern Mariana Islands         |         11.2
+ Guyana                           |           11
+ Ghana                            |           11
+ Antigua and Barbuda              |           11
+ Estonia                          |         10.9
+ Hungary                          |         10.5
+ Saudi Arabia                     |         10.5
+ Poland                           |         10.3
+ Algeria                          |         10.3
+ France                           |         10.2
+ Turks and Caicos Islands         |           10
+ Saint Pierre and Miquelon        |          9.9
+ Latvia                           |          9.8
+ Colombia                         |          9.7
+ Morocco                          |          9.5
+ Greenland                        |          9.4
+ Turkey                           |          9.3
+ Suriname                         |            9
+ Mongolia                         |            9
+ Belgium                          |          8.8
+ India                            |          8.8
+ British Virgin Islands           |          8.7
+ Kyrgyzstan                       |          8.6
+ Mauritius                        |          8.3
+ Netherlands                      |          8.3
+ Guam                             |          8.2
+ Finland                          |          8.1
+ Sweden                           |          8.1
+ Ukraine                          |            8
+ Anguilla                         |            8
+ Central African Republic         |            8
+ Bermuda                          |            8
+ Venezuela                        |          7.9
+ Costa Rica                       |          7.9
+ Fiji                             |          7.6
+ Argentina                        |          7.5
+ Bolivia                          |          7.4
+ Philippines                      |          7.4
+ Romania                          |          7.3
+ United States                    |          7.3
+ Nicaragua                        |          7.2
+ United Kingdom                   |          7.2
+ Czech Republic                   |          7.1
+ Canada                           |          7.1
+ San Marino                       |            7
+ Aruba                            |          6.9
+ Faroe Islands                    |          6.8
+ Paraguay                         |          6.6
+ Pakistan                         |          6.6
+ Indonesia                        |          6.6
+ Uruguay                          |          6.5
+ Malta                            |          6.4
+ New Zealand                      |          6.4
+ El Salvador                      |          6.3
+ Virgin Islands                   |          6.2
+ Azerbaijan                       |            6
+ Chile                            |            6
+ Montserrat                       |            6
+ Denmark                          |            6
+ Trinidad and Tobago              |          5.9
+ Israel                           |          5.8
+ Russia                           |          5.8
+ Moldova                          |          5.8
+ Brazil                           |          5.7
+ Australia                        |          5.7
+ Germany                          |          5.3
+ Kazakhstan                       |          5.3
+ Myanmar                          |          5.2
+ Sri Lanka                        |          5.1
+ Bangladesh                       |            5
+ Austria                          |          4.9
+ Mexico                           |          4.9
+ Luxembourg                       |          4.9
+ Uzbekistan                       |          4.9
+ Panama                           |          4.5
+ Honduras                         |          4.5
+ Iceland                          |          4.5
+ Saint Kitts and Nevis            |          4.5
+ Cuba                             |          4.3
+ Ecuador                          |          4.2
+ Palau                            |          4.2
+ Taiwan                           |          4.1
+ Japan                            |          4.1
+ China                            |          4.1
+ Falkland Islands                 |          4.1
+ Guatemala                        |          4.1
+ Andorra                          |            4
+ Cayman Islands                   |            4
+ Norway                           |          3.6
+ Peru                             |          3.6
+ Kuwait                           |          3.4
+ Switzerland                      |          3.2
+ South Korea                      |          3.2
+ Hong Kong                        |          3.1
+ Malaysia                         |          3.1
+ Gibraltar                        |            3
+ Brunei                           |          2.6
+ Tajikistan                       |          2.5
+ United Arab Emirates             |          2.4
+ Liechtenstein                    |          2.3
+ Bhutan                           |          2.1
+ Kiribati                         |            2
+ Isle of Man                      |            2
+ Monaco                           |            2
+ Seychelles                       |            2
+ Singapore                        |          1.9
+ Laos                             |          1.9
+ Papua New Guinea                 |          1.9
+ Macao                            |          1.8
+ Vanuatu                          |          1.7
+ Jersey                           |          1.7
+ Vietnam                          |          1.3
+ Belarus                          |            1
+ Guernsey                         |          0.9
+ Thailand                         |          0.7
+ Qatar                            |          0.3
+ Cambodia                         |            0
+(198 rows)
