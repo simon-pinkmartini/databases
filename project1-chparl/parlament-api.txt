@@ -1,0 +1,13 @@
+- Liste und IDs der Parlamentarier:
+http://ws-old.parlament.ch/councillors/basicdetails?councilFilter=N&format=json
+
+- html-suche nach parlamentarier-id und typ:fragestunde
+https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista#k=PdBusinessCouncilorPersonNumber%3A4209%20PdAffairTypeId%3A14
+https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista#k=PdBusinessCouncilorPersonNumber:4209 PdAffairTypeId:14
+
+- eine Frage mit API abrufen:
+https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20175312
+http://ws-old.parlament.ch/affairs/20175312?format=json
+
+Legislaturperiode 49&50
+affairs: start bei 718
