@@ -46,10 +46,10 @@
     //--------
 
     //Create a grey, empty space for the map
-    var map = L.map('map', {zoomControl:false}).setView([46.8, 8.2], 8);
+    var map = L.map('map', {zoomControl:false}).setView([46.88, 8.2], 8);
     map.dragging.disable();
     map.doubleClickZoom.disable();
-    
+
     //Add layers to the map --> make sure we have a good token!
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=sk.eyJ1Ijoic2ltb24tcGlua21hcnRpbmkiLCJhIjoiY2o0OHRteHd5MGdqNTJxbnd5a2FycnFjMCJ9.D-OViIkNdbrEyL5O1_9Mgg',
     {
@@ -159,8 +159,12 @@
 
     //the function to display the original text in the article
     function resetArticleText() {
-      articleHTML = '<span class="title">About this project</span><br><br>Some info...<br>Some info...<br>Some info...<br>Some info...<br>Some info...<br><br>'
-      articleHTML += '<span class="click">And what did your councillors do during the question hours?<br>Click on a canton to see what they have been up to!</span>'
+      articleHTML = '<span class="title">About this project</span><br><br><em>"Why? When? Who? Where? And how many?"</em><br><br>Asking questions is a basic aspect of life. It is also an important feature of Swiss democracy.<br><br>';
+      articleHTML += 'Eight times a year, the government presents itself to the elected representatives of the people. The parlamentarians get to ask whatever questions they want - whether on the treatment of Tibetian refugees or on law violations by Swiss companies in Syria. The session helps to clarify the administrations current positions and to shape its future policies.<br><br>';
+      articleHTML += 'But what happens exactly during the 90 minutes of question time? What kind of topics are addressed and what are the topics no one cares about? Which parlamentarians are actively demanding answers and which arent?<br><br>';
+      articleHTML += 'This project tries to shed some light on these matters. It visualizes the entire body of questions on a cantonal heat-map - giving voters a sense of how active the representatives of their cantons are. Further info on each canton is provided in the form of a councillors ranking. A random question from that canton is displayed.<br><br>';
+      articleHTML += 'The current data covers all questions that were asked in the current legislature, which started in 2015. A total of 1022 questions was included in the analysis. In the Swiss parliament, which counts 200 members, this amounts to an average of 5.1 question per councillor.<br><br>';
+      articleHTML += '<span class="click">Explore the data by hovering over the map. Click on a canton to dive deeper into the analysis!</span>'
       return articleHTML;
     }
 
@@ -199,7 +203,7 @@
     //Add the title control to the map
     title.addTo(map);*/
 
-    /*//THE INSTRUCTIONS CONTROL
+    //THE INSTRUCTIONS CONTROL
     var instructions = L.control({position: 'topleft'});
     //Fill the title container with text
     instructions.onAdd = function (map) {
@@ -208,7 +212,7 @@
       return div_title;
     }
     //Add the title control to the map
-    instructions.addTo(map);*/
+    instructions.addTo(map);
 
     /*//THE SELECTBOX CONTROL
   	var dropdown = L.control({position: 'topleft'});
@@ -230,7 +234,7 @@
         return this._div;
     };
     info.update = function (props) {
-      this._div.innerHTML = '<h4>Average number of questions asked</h4>';
+      this._div.innerHTML = '<h4>Heat-map of countrywide and cantonal activity</h4>';
       this._div.innerHTML += (props ? '<b>' + props.kanton_long + ': </b>' + props.factor + ' questions per councillor'  : '<b>Switzerland: </b>5.1 questions per councillor.');
 
     }

@@ -3,15 +3,18 @@ An Inquiry into the Mysteries of Parliamentary Question Hours
 
 This data project looks at the questions Swiss councillors have asked in parliament.
 It maps the questions by canton (province) and looks at the activity of individual councillors.
-The techniques used are API-based data gathering, SQL databases, JSON and JavaScript visualization with leaflet.
+Techniques used are API-based data gathering, SQL databases, JSON and JavaScript visualization with leaflet.
 
-Download "project1-chparl.zip" and look at "mapv2.html" to see the current work in progress.
+Please download "project1-chparl.zip" from https://github.com/simon-pinkmartini/databases/tree/master/project1-chparl
+ and look at "mapv2.html" to see the work in progress.
+
+ Current project status:
 - Implemented: Visualization of "questions per councillor" on Swiss map with hover effect
 - Implemented: Show a list of most active councillors for each canton.
 - Implemented: Display a random question for each canton in info space.
-- Pending: Write the project introduction / description in the info space.
+- Implemented: Write the project introduction / description in the info space.
 - Pending: Go over the question data in SQL once more and clean up some whitespace / newline issues.
-- Pending: Make last tweaks to the style and usability of the vizualization
+- Implemented: Make last tweaks to the style and usability of the vizualization
 
 The files needed to display the visualization are:
 - mapv2.html: The html doc containing the leaflet map. Is makes use of the following two files:
